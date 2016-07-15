@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Users</title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+<header>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+    </ul>
+  </nav>
+</header>
+<h1>Add a New User</h1>
+<form action="/user/new" method="post">
+  <label for="">First Name: </label>
+  <input type="text" name="first_name"><br>
+  <label for="">Last Name: </label>
+  <input type="text" name="last_name"><br>
+  <label for="">Age: </label>
+  <input type="text" name="age"><br>
+  <input type="submit" value="Add User">
+</form>
+<h2>List of All Users</h2>
+  <ul>
+    <% users.forEach( user => { %>
+    <li>
+      <a href="/user/<%= user.user_id %>">
+        <%= user.first_name %> <%= user.last_name %>
+      </a>
+    </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

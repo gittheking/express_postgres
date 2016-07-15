@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users (
+  user_id SERIAL PRIMARY KEY NOT NULL,
+  first_name VARCHAR NOT NULL,
+  last_name VARCHAR NOT NULL,
+  age INT NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT now()
+);
